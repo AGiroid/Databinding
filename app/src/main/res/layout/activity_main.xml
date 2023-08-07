@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="registration"
+            type="com.example.databinding.Registration" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/txt1"
+            style="@style/Textview_Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            style="@style/Edittext_Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/txtName"
+            android:text="@={registration.name}" />
+
+        <EditText
+            style="@style/Edittext_Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="age"
+            android:id="@+id/txtAge"
+            android:text="@={registration.age}" />
+
+        <EditText
+            style="@style/Edittext_Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/txtEmail"
+            android:text="@={registration.email}" />
+
+        <EditText
+            style="@style/Edittext_Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:id="@+id/txtPassword"
+            android:inputType="textPassword"
+            android:text="@={registration.password}" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            style="@style/Button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register" />
+    </LinearLayout>
+</layout>
