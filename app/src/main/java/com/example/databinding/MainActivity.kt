@@ -2,9 +2,7 @@ package com.example.databinding
 
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -21,10 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding.txt1.text = "Registration!!"
         binding.btnRegister.setOnClickListener {
-            if (binding.txtName.text?.isEmpty()!! || binding.txtEmail.text?.isEmpty()!! || binding.txtAge.text?.isEmpty()!! || binding.txtPassword.text?.isEmpty()!!) {
+            if (binding.edtName.text?.isEmpty()!! || binding.edtEmail.text?.isEmpty()!! || binding.edtAge.text?.isEmpty()!! || binding.edtPassword.text?.isEmpty()!!) {
                 Toast.makeText(this, "please enter the remaining field", Toast.LENGTH_SHORT).show()
             }
-            if (!isEmailValid(binding.txtEmail.text.toString())) {
+            if (!isEmailValid(binding.edtEmail.text.toString())) {
                 Toast.makeText(
                     this,
                     "please enter the valid email",
@@ -32,15 +30,10 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             } else {
                 val intent = Intent(this, HomeActivity::class.java)
-                val sharedPreferences: SharedPreferences =
-                    getSharedPreferences("MySharedPref", MODE_PRIVATE)
-                val editor = sharedPreferences.edit()
-                editor.putString("name", binding.txtName.text.toString())
-                editor.putString("age", binding.txtAge.text.toString())
-                editor.putString("email", binding.txtEmail.text.toString())
-                editor.putString("password", binding.txtPassword.text.toString())
-                editor.apply()
-                Log.d("saved",sharedPreferences.toString())
+                val registration=Registration(binding.edtName.text.toString(),
+                    binding.edtAge.text.toString(),binding.edtEmail.text.toString()
+                    ,binding.edtPassword.text.toString())
+                intent.putExtra("data",registration)
                 startActivity(intent)
 
             }

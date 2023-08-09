@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
-            android:id="@+id/txtName"
+            android:id="@+id/edtName"
             android:text="@={registration.name}" />
 
         <EditText
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="age"
-            android:id="@+id/txtAge"
+            android:id="@+id/edtAge"
             android:text="@={registration.age}" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:id="@+id/txtEmail"
+            android:id="@+id/edtEmail"
             android:text="@={registration.email}" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:id="@+id/txtPassword"
+            android:id="@+id/edtPassword"
             android:inputType="textPassword"
             android:text="@={registration.password}" />
 

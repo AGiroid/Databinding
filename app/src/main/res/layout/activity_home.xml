@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
+<data>
+    <variable
+        name="registration"
+        type="com.example.databinding.Registration" />
+</data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,6 +22,7 @@
             style="@style/Textview_Style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{registration.name}"
             android:hint="Name" />
 
         <TextView
@@ -25,6 +30,7 @@
             style="@style/Textview_Style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{registration.age}"
             android:hint="age" />
 
         <TextView
@@ -32,6 +38,7 @@
             style="@style/Textview_Style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{registration.email}"
             android:hint="Email" />
 
         <TextView
@@ -39,6 +46,7 @@
             style="@style/Textview_Style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{registration.password}"
             android:hint="Password" />
 
     </LinearLayout>
